@@ -167,18 +167,6 @@
             "Brazil": 3.63
         };
 
-        for (const country in conversionRates) {
-            document.write(`<option value="${country}">${country}</option>`);
-        }
-    </script>
-</select>
-<input type="text" placeholder="Send amount in SGD" id="sgd-amount">
-<a href="getstarted.html"><div class="get-started-box" onclick="convertCurrency()">Get Started</div></a>
-<div class="convert-box" onclick="convertCurrency()">Convert</div>
-<p id="conversion-result"></p>
-</div>
-
-<script>
 function convertCurrency() {
     const countrySelect = document.getElementById('country-select');
     const selectedCountry = countrySelect.value;
