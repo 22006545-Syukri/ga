@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Payment</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+        
+        .blue-section {
+            height: 20vh; /*percentage of screen*/
+            background-color: rgb(90, 179, 252);
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+            color: black;
+            padding: 0 20px;
+        }
+        
+        .blue-section h1 {
+            font-size: 100px;
+            margin: 0;
+        }
+
+        .blue-section .menu-items {
+            display: flex;
+            align-items: center;
+        }
+
+        .blue-section .menu-items a {
+            color: black;
+            text-decoration: none; /* removes underline */
+            font-size: 30px;
+            margin: 0 50px; /* vertical then horizontal spacing */
+        }
+
+        .blue-section .login-signup-box {
+            background-color: rgb(90, 179, 252);
+            color: black;
+            padding: 10px 20px;
+            font-size: 18px;
+            border-radius: 10px;
+            border: 2px black;
+            border-style: solid;
+            cursor: pointer;
+        }
+        .blue-section a {
+            text-decoration: none;
+            color: black;
+        }
+        
+        .black-section {
+            height: 80vh;
+            background-color: rgb(24, 23, 23); 
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: white;
+        }
+
+        .black-section h2 {
+            font-size: 60px;
+            margin-bottom: 20px;
+            color: rgb(90, 179, 252);
+        }
+        .black-section a {
+            text-decoration: none;
+        }
+
+        .black-section input[type="text"] {
+            padding: 10px;
+            font-size: 18px;
+            border: 2px solid white;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            width: 300px;
+        }
+
+        .black-section .get-started-box {
+            background-color: rgb(90, 179, 252);
+            color: black;
+            padding: 10px 20px;
+            font-size: 18px;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+
+        .payment-boxes {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+            width: 80%;
+        }
+
+        .currency-box {
+            background-color: rgb(24, 23, 23);
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            width: 250px;
+            text-align: center;
+        }
+
+        .exchange-rate-box {
+            background-color: rgb(24, 23, 23);
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            width: 150px;
+            text-align: center;
+        }
+
+        .exchange-rate-box h2{
+            font-size: 24px;
+        }
+
+        .pay-box {
+            background-color: rgb(90, 179, 252);
+            color: black;
+            padding: 15px 30px;
+            font-size: 20px;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="blue-section">
+        <a href="index.html"><h1>RemitOn</h1></a>
+        <div class="menu-items">
+            <a href="moreinfo.html">More Information</a>
+            <a href="tracktransfer.html">Track A Transfer</a>
+            <a href="settings.html">Settings</a>
+        </div>
+        <a href="loginsignup.html"><div class="login-signup-box">Log In / Sign Up</div></a>
+    </div>
+    <div class="black-section">
+        <div class="payment-boxes">
+            <input type="text" placeholder="Enter SGD Amount" id="sgd-amount-box" class="currency-box">
+            <div class="exchange-rate-box">
+                <h2>Exchange Rate</h2>
+            </div>
+            <select id="target-currency-box" class="currency-box">
+                <option value="USA">USA</option>
+                <op tion value="UK">UK</option>
+                <option value="Canada">Canada</option>
+                <option value="Australia">Australia</option>
+                <option value="Japan">Japan</option>
+                <option value="China">China</option>
+                <option value="France">France</option>
+                <option value="Germany">Germany</option>
+                <option value="India">India</option>
+                <option value="Brazil">Brazil</option>
+            </select>
+        </div>
+        <div class="payment-boxes">
+            <a href="otp.html"><div class="pay-box">Pay</div></a>
+            <button id="convert-button" class="pay-box">Convert</button>
+        </div>
+        <div id="converted-amount" class="currency-box"></div>
+    </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const convertButton = document.getElementById("convert-button");
+            const sgdAmountBox = document.getElementById("sgd-amount-box");
+            const targetCurrencyBox = document.getElementById("target-currency-box");
+            const exchangeRateBox = document.querySelector(".exchange-rate-box");
+            const convertedAmountBox = document.getElementById("converted-amount");
+
+                const exchangeRates = {
+            "USA": 0.74,
+            "UK": .58,
+            "Canada": 0.99,
+            "Australia": 1.14,
+            "Japan": 107.01,
+            "China": 5.32,
+            "France": 0.65,
+            "Germany": 0.68,
+            "India": 61.56,
+            "Brazil": 3.63
+            };
+    
+            targetCurrencyBox.addEventListener("change", function () {
+                const selectedCurrency = targetCurrencyBox.value;
+                const exchangeRate = exchangeRates[selectedCurrency];
+                exchangeRateBox.innerHTML = `<h2>Exchange Rate: 1 SGD = ${exchangeRate} ${selectedCurrency.toUpperCase()}</h2>`;
+            });
+    
+            convertButton.addEventListener("click", function () {
+                const selectedCurrency = targetCurrencyBox.value;
+                const exchangeRate = exchangeRates[selectedCurrency];
+                const sgdAmount = parseFloat(sgdAmountBox.value);
+                
+                if (!isNaN(sgdAmount)) {
+                    const convertedAmount = sgdAmount * exchangeRate;
+                    convertedAmountBox.textContent = `Converted Amount: ${convertedAmount.toFixed(2)} ${selectedCurrency.toUpperCase()}`;
+                } else {
+                    convertedAmountBox.textContent = "Invalid Amount";
+                }
+            });
+        });
+    </script>    
+</body>
+</html>

@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login Page</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+        
+        .blue-section {
+            height: 20vh;
+            background-color: rgb(90, 179, 252);
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+            color: black;
+            padding: 0 20px;
+        }
+        
+        .blue-section h1 {
+            font-size: 100px;
+            margin: 0;
+        }
+
+        .blue-section .menu-items {
+            display: flex;
+            align-items: center;
+        }
+
+        .blue-section .menu-items a {
+            color: black;
+            text-decoration: none; /* removes underline */
+            font-size: 30px;
+            margin: 0 50px; /* vertical then horizontal spacing */
+        }
+
+        .blue-section .login-signup-box {
+            background-color: rgb(90, 179, 252);
+            color: black;
+            padding: 10px 20px;
+            font-size: 18px;
+            border-radius: 10px;
+            border: 2px black;
+            border-style: solid;
+            cursor: pointer;
+        }
+        .blue-section a {
+            text-decoration: none;
+            color: black;
+        }
+        
+        .black-section {
+            height: 80vh;
+            background-color: rgb(24, 23, 23); 
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-around;
+            color: white;
+        }
+
+        .black-section .login-form {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            padding: 20px;
+            border-radius: 10px;
+            background-color: rgba(24, 23, 23);
+        }
+
+        .black-section h2 {
+            font-size: 36px;
+            margin-bottom: 20px;
+            color: rgb(90, 179, 252);
+        }
+        .black-section a {
+            text-decoration: none;
+        }
+
+        .black-section input[type="text"], .black-section input[type="password"] {
+            padding: 10px;
+            font-size: 18px;
+            border: 2px solid white;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            width: 300px;
+        }
+
+        .black-section .qr-code-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .black-section .qr-code img {
+            max-width: 300px;
+            max-height: 300px;
+        }
+
+        .black-section .login-button {
+            background-color: rgb(90, 179, 252);
+            color: black;
+            padding: 10px 20px;
+            font-size: 18px;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+
+        .black-section .signup-details {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .black-section .signup-details input[type="text"] {
+            width: 300px;
+        }
+
+        .black-section .sign-up-button {
+            background-color: rgb(90, 179, 252);
+            color: black;
+            padding: 10px 20px;
+            font-size: 18px;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="blue-section">
+        <a href="index.html"><h1>RemitOn</h1></a>
+        <div class="menu-items">
+            <a href="moreinfo.html">More Information</a>
+            <a href="tracktransfer.html">Track A Transfer</a>
+            <a href="settings.html">Settings</a>
+        </div>
+        <a href="loginsignup.html"><div class="login-signup-box">Log In / Sign Up</div></a>
+    </div>
+    <div class="black-section">
+        <div class="login-form">
+            <h2>Log In</h2>
+            <input type="text" placeholder="Username">
+            <input type="password" placeholder="Password">
+            <div class="qr-code-container">
+                <div class="qr-code">
+                    <img src="LoginQRCode.jpg" alt="QR Code">
+                </div>
+            </div>
+            <a href="otp.html"><div class="login-button">Log In</div></a>
+        </div>
+        <div class="signup-details">
+            <h2>Sign Up</h2>
+            <input type="text" placeholder="Full Name">
+            <input type="text" placeholder="Email">
+            <input type="text" placeholder="NRIC">
+            <input type="text" placeholder="Phone Number">
+            <input type="text" placeholder="Date Of Birth">
+            <a href="otp.html"><div class="sign-up-button">Sign Up</div></a>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Bank Details</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+        
+        .blue-section {
+            height: 20vh; /*percentage of screen*/
+            background-color: rgb(90, 179, 252);
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+            color: black;
+            padding: 0 20px;
+        }
+        
+        .blue-section h1 {
+            font-size: 100px;
+            margin: 0;
+        }
+
+        .blue-section .menu-items {
+            display: flex;
+            align-items: center;
+        }
+
+        .blue-section .menu-items a {
+            color: black;
+            text-decoration: none; /* removes underline */
+            font-size: 30px;
+            margin: 0 50px; /* vertical then horizontal spacing */
+        }
+
+        .blue-section .login-signup-box {
+            background-color: rgb(90, 179, 252);
+            color: black;
+            padding: 10px 20px;
+            font-size: 18px;
+            border-radius: 10px;
+            border: 2px black;
+            border-style: solid;
+            cursor: pointer;
+        }
+
+        .blue-section a {
+            text-decoration: none;
+            color: black;
+        }
+        
+        .black-section {
+            height: 80vh;
+            background-color: rgb(24, 23, 23); 
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: white;
+        }
+
+        .black-section h2 {
+            font-size: 60px;
+            margin-bottom: 20px;
+            color: rgb(90, 179, 252);
+        }
+
+        .black-section a {
+            text-decoration: none;
+        }
+
+        .black-section input[type="text"] {
+            padding: 10px;
+            font-size: 18px;
+            border: 2px solid white;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            width: 300px;
+        }
+
+        .black-section .get-started-box {
+            background-color: rgb(90, 179, 252);
+            color: rgb(24, 23, 23);
+            padding: 10px 20px;
+            font-size: 18px;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+
+        .login-section {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+            width: 80%;
+        }
+
+        .login-box, .recipient-box {
+            background-color: rgb(24, 23, 23);
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        .login-box input[type="text"], .recipient-box input[type="text"] {
+            padding: 10px;
+            font-size: 18px;
+            border: 2px solid white;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            width: 250px;
+        }
+
+        .next-button {
+            background-color: rgb(90, 179, 252);
+            color: rgb(24, 23, 23);
+            padding: 10px 20px;
+            font-size: 18px;
+            border-radius: 10px;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="blue-section">
+        <a href="index.html"><h1>RemitOn</h1></a>
+        <div class="menu-items">
+            <a href="moreinfo.html">More Information</a>
+            <a href="tracktransfer.html">Track A Transfer</a>
+            <a href="settings.html">Settings</a>
+        </div>
+        <a href="loginsignup.html"><div class="login-signup-box">Log In / Sign Up</div></a>
+    </div>
+    <div class="black-section">
+        <div class="login-section">
+            <div class="login-box">
+                <h2>Bank Account Details</h2>
+                <input type="text" placeholder="Account Number">
+                <input type="text" placeholder="Bank Name">
+                <input type="text" placeholder="Branch Code">
+                <input type="text" placeholder="Routing Number">
+            </div>
+
+            <div class="recipient-box">
+                <h2>Recipient Bank Account Details</h2>
+                <input type="text" placeholder="Recipient Account Number">
+                <input type="text" placeholder="Recipient Bank Name">
+                <input type="text" placeholder="Recipient Branch Code">
+                <input type="text" placeholder="Recipient Routing Number">
+            </div>
+        </div>
+        <a href="getstarted2.html"><button class="next-button">Next</button></a>
+    </div>
+</body>
+</html>

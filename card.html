@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Settings</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+        
+        .blue-section {
+            height: 20vh; /*percentage of screen*/
+            background-color: rgb(90, 179, 252);
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+            color: black;
+            padding: 0 20px;
+        }
+        
+        .blue-section h1 {
+            font-size: 100px;
+            margin: 0;
+        }
+
+        .blue-section .menu-items {
+            display: flex;
+            align-items: center;
+        }
+
+        .blue-section .menu-items a {
+            color: black;
+            text-decoration: none; /* removes underline */
+            font-size: 30px;
+            margin: 0 50px; /* vertical then horizontal spacing */
+        }
+
+        .blue-section .login-signup-box {
+            background-color: rgb(90, 179, 252);
+            color: black;
+            padding: 10px 20px;
+            font-size: 18px;
+            border-radius: 10px;
+            border: 2px black;
+            border-style: solid;
+            cursor: pointer;
+        }
+        .blue-section a {
+            text-decoration: none;
+            color: black;
+        }
+        
+        .black-section {
+            height: 80vh;
+            background-color: rgb(24, 23, 23); 
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: white;
+        }
+
+        .black-section h1 {
+            font-size: 60px;
+            margin-bottom: 20px;
+            color: rgb(90, 179, 252); /* Change the color of the h1 */
+        }
+
+        .black-section a {
+            text-decoration: none;
+        }
+
+        .black-section a {
+            font-size: 30px;
+            margin-bottom: 10px;
+            color: rgb(90, 179, 252);
+        }
+
+        .black-section .get-started-box {
+            background-color: rgb(90, 179, 252);
+            color: black;
+            padding: 10px 20px;
+            font-size: 18px;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+        .remittance-card {
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px;
+            width: 300px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        .remittance-card h2 {
+            color: rgb(90, 179, 252);
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+        .remittance-card p {
+            color: white;
+            font-size: 18px;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="blue-section">
+        <a href="index.html"><h1>RemitOn</h1></a>
+        <div class="menu-items">
+            <a href="moreinfo.html">More Information</a>
+            <a href="tracktransfer.html">Track A Transfer</a>
+            <a href="settings.html">Settings</a>
+        </div>
+        <a href="loginsignup.html"><div class="login-signup-box">Log In / Sign Up</div></a>
+    </div>
+    <div class="black-section">
+        <div class="remittance-card">
+            <h2>NAME</h2>
+            <p>Experience quick and secure remittance services with RemitOn. Send money to your loved ones across the globe with just a few clicks.<br> 1111 1111 1111 1111<br>EXP 12/34 CVC 111</p>
+        </div>
+    </div>
+</body>
+</html>
